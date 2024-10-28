@@ -1,9 +1,13 @@
+"use client";
 import { useEffect, useState } from "react";
 
 const useWindowWidth = () => {
     const [state, setState] = useState(window.innerWidth);
 
     useEffect(() => {
+        const isClient = typeof window !== "undefined";
+        if (!isClient) return;
+
         const getWidth = () => {
             setState(window.innerWidth);
         };

@@ -1,10 +1,11 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import Logo from "@/assets/logo.png";
-import { Button, Drawer } from "@mui/material";
+import { Drawer, IconButton } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { HiMenu } from "react-icons/hi";
 
 const nav_routes = [
     {
@@ -57,9 +58,12 @@ export default function Header() {
                     ))}
                 </nav>
                 <div className="lg:hidden">
-                    <Button onClick={() => setOpen((prev) => !prev)}>
-                        menu icon
-                    </Button>
+                    <IconButton
+                        size="large"
+                        onClick={() => setOpen((prev) => !prev)}
+                    >
+                        <HiMenu size={36} color="white"/>
+                    </IconButton>
                     <Drawer open={open} onClose={() => setOpen(false)}>
                         <nav className="flex flex-col justify-start items-start gap-x-5 bg-[#1E1A65] h-full pt-20 w-60 pl-8 gap-y-5 text-white">
                             {nav_routes.map((route, i) => (

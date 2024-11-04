@@ -35,7 +35,7 @@ export default function Header() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="bg-[#1E1A65] text-white flex items-center py-1">
+        <div className="bg-primary text-white flex items-center py-1">
             <section className="max-w-7xl mx-auto px-3 grow h-20 flex items-center justify-between">
                 <img
                     src={Logo.src}

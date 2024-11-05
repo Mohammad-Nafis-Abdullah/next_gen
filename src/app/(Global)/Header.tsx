@@ -42,7 +42,7 @@ export default function Header() {
                     onClick={()=> router.push("/")}
                     src={Logo.src}
                     alt="NextGen Marketing Agency"
-                    className="h-4/5"
+                    className="h-4/5 cursor-pointer active:scale-95"
                 />
                 <nav className="hidden lg:flex justify-center items-center gap-x-5">
                     {nav_routes.map((route, i) => (

@@ -30,7 +30,7 @@ export default function Hero() {
                 </span>
                 {/* <Cursor cursorColor="black" /> */}
             </h1>
-            <article className={`py-5 text-base sm:text-xl font-bold`}>
+            <article className={`py-5 text-sm sm:text-xl font-bold`}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
                 saepe similique assumenda magnam? Quia delectus adipisci
                 dolorem. Debitis laudantium corrupti voluptatem reiciendis,

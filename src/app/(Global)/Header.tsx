@@ -3,7 +3,7 @@
 import Logo from "@/assets/logo.png";
 import { Drawer, IconButton } from "@mui/material";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 
@@ -32,12 +32,14 @@ const nav_routes = [
 
 export default function Header() {
     const path = usePathname();
+    const router = useRouter();
     const [open, setOpen] = useState(false);
 
     return (
         <div className="bg-primary text-white flex items-center py-1">
             <section className="max-w-7xl mx-auto px-3 grow h-20 flex items-center justify-between">
                 <img
+                    onClick={()=> router.push("/")}
                     src={Logo.src}
                     alt="NextGen Marketing Agency"
                     className="h-4/5"

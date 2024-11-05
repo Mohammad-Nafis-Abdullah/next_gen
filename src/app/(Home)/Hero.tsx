@@ -22,7 +22,7 @@ export default function Hero() {
     return (
         <div className={`grow shrink basis-[555px] ${comfortaa.className}`}>
             <h1
-                className={`text-3xl sm:text-5xl font-bold bdr`}
+                className={`text-3xl sm:text-5xl font-bold`}
             >
                 <span>
                     We are focused <br />

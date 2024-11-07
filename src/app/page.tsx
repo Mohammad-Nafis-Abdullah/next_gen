@@ -1,11 +1,19 @@
+import { AboutNextGen } from "./(Home)/AboutNextGen";
+import { AboutVedio } from "./(Home)/AboutVedio";
 import { Completed_work } from "./(Home)/Completed_work";
 import Hero from "./(Home)/Hero";
 
 export default function Home() {
-  return (
-    <div className="p-2 flex gap-5 flex-wrap min-h-[calc(100vh-120px)] items-center content-center">
-      <Hero/>
-      <Completed_work/>
-    </div>
-  );
+    return (
+        <>
+            <div className="px-2 py-8 flex gap-5 flex-wrap items-center content-center">
+                <Hero />
+                <Completed_work />
+            </div>
+            <div className="px-2 lg:pl-0 py-8 flex gap-5 flex-wrap bg-primary/5 rounded-xl">
+                <AboutVedio />
+                <AboutNextGen />
+            </div>
+        </>
+    );
 }

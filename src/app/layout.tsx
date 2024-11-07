@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import {Nunito} from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "./(Global)/Header";
 
@@ -15,7 +15,10 @@ const geistMono = localFont({
     weight: "100 900",
 });
 
-const nunito = Nunito({subsets:["latin"]});
+const font = Lato({
+    subsets: ["latin"],
+    weight: ["100", "300", "400", "700", "900"],
+});
 
 export const metadata: Metadata = {
     title: "NextGen marketing agency",
@@ -30,10 +33,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${nunito.className} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} ${font.className} antialiased`}
             >
                 <Header />
-                <div className="max-w-7xl mx-auto px-3 py-5">{children}</div>
+                <div className="max-w-7xl mx-auto px-3">{children}</div>
             </body>
         </html>
     );

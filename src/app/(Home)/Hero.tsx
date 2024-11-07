@@ -1,9 +1,6 @@
 "use client";
-import { Comfortaa } from "next/font/google";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { useTypewriter } from "react-simple-typewriter";
-
-const comfortaa = Comfortaa({ subsets: ["latin"] });
 
 const PHONE_NUMBER = "+8801779895263";
 
@@ -20,10 +17,8 @@ export default function Hero() {
     });
 
     return (
-        <div className={`grow shrink basis-[555px] ${comfortaa.className}`}>
-            <h1
-                className={`text-3xl sm:text-5xl font-bold`}
-            >
+        <div className={`grow shrink basis-[555px]`}>
+            <h1 className={`text-3xl sm:text-5xl font-bold`}>
                 <span>
                     We are focused <br />
                     on <span className="text-secondary">{text}</span>
@@ -42,7 +37,7 @@ export default function Hero() {
                 href={`https://wa.me/${PHONE_NUMBER}`}
                 target="_blank"
                 rel="noreferrer"
-                className={`inline-block ${comfortaa.className} text-white bg-blue-600 h-12 w-44 flex items-center px-5 gap-5 rounded-md hover:bg-blue-700 transition-colors duration-20 font-bold`}
+                className={`text-white bg-blue-600 h-12 w-44 flex items-center px-5 gap-5 rounded-md hover:bg-blue-700 transition-colors duration-20 font-bold`}
             >
                 <span>Get Started</span>
                 <FaAngleDoubleRight />

@@ -89,7 +89,7 @@ function ServiceCard({
             <img
                 src={image?.src}
                 alt={title}
-                className="h-[80%] w-full object-contain"
+                className="h-56 w-full object-contain"
             />
             <section
                 className={`absolute left-0 bottom-0 right-0 rounded-2xl bg-gray-800/30 ${

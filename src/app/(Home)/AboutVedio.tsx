@@ -1,11 +1,20 @@
 "use client";
 import { Box } from "@mui/material";
+// import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 
 // @flow
 export function AboutVedio() {
     const [isItemVisible, setIsItemVisible] = useState(false);
     const videoRef = useRef<HTMLVideoElement | null>(null);
+
+    // useEffect(() => {
+    //     axios.get("/api/aboutVideo").then(({ data }) => {
+    //         console.log(data);
+    //     }).catch((err)=> {
+    //         console.error(err);
+    //     });
+    // }, []);
 
     useEffect(() => {
         // console.log({ isItemVisible, video_ref });

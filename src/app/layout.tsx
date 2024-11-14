@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "./(Global)/Header";
+import Footer from "./(Global)/Footer";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -37,6 +38,7 @@ export default function RootLayout({
             >
                 <Header />
                 <div className="max-w-7xl mx-auto px-3">{children}</div>
+                <Footer/>
             </body>
         </html>
     );

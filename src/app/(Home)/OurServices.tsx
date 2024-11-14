@@ -5,10 +5,7 @@ import ve_img from "@/assets/videoEditing.png";
 import wd_img from "@/assets/webDevelopment.png";
 import { StaticImageData } from "next/image";
 import { useState } from "react";
-import {
-    MdKeyboardDoubleArrowDown,
-    MdKeyboardDoubleArrowUp,
-} from "react-icons/md";
+import { TbArrowBadgeDownFilled, TbArrowBadgeUpFilled } from "react-icons/tb";
 
 export function OurServices() {
     return (
@@ -96,11 +93,14 @@ function ServiceCard({
                     isOpen ? "h-full" : "h-10"
                 } z-10 transition-height duration-500 backdrop-blur-sm py-1 px-2`}
             >
-                <div className="mb-2" onClick={() => setIsOpen((prev) => !prev)}>
+                <div
+                    className="mb-2"
+                    onClick={() => setIsOpen((prev) => !prev)}
+                >
                     {isOpen ? (
-                        <MdKeyboardDoubleArrowDown className="size-8 mx-auto cursor-pointer text-white" />
+                        <TbArrowBadgeDownFilled className="size-8 mx-auto cursor-pointer text-white" />
                     ) : (
-                        <MdKeyboardDoubleArrowUp className="size-8 mx-auto cursor-pointer text-white" />
+                        <TbArrowBadgeUpFilled className="size-8 mx-auto cursor-pointer text-white" />
                     )}
                 </div>
                 <article className="h-[85%] overflow-y-auto text-white font-bold">

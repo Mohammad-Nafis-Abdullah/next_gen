@@ -1,5 +1,6 @@
 "use client";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
+import { RiWhatsappFill } from "react-icons/ri";
 
 // @flow
 export default function Footer() {
@@ -41,6 +42,21 @@ export default function Footer() {
                 Copyright &copy; {new Date().getFullYear()} NextGen. All Rights
                 Reserved.
             </h4>
+
+            {/* floating w.app icon */}
+            <div>
+                <a
+                    className="fixed bottom-10 right-5 sm:right-10 cursor-pointer animate-bounce"
+                    href="https://wa.me/+8801779895263"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <RiWhatsappFill
+                        className={`relative text-green-500 size-12 rounded-full overflow-visible z-40`}
+                    />
+                    <div className="absolute top-2 left-2 size-8 rounded-full z-30 bg-white"/>
+                </a>
+            </div>
         </footer>
     );
 }

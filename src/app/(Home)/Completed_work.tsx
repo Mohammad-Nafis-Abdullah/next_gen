@@ -2,8 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 import completed_work from "@/assets/completed_work.gif";
 import cloud from "@/assets/cloud.png";
-import CountUp from "react-countup";
-
+import { useCountUp } from "react-countup";
+import { useRef } from "react";
 
 export function Completed_work() {
     return (
@@ -38,6 +38,19 @@ function Cloud({
     bottom?: string;
     left?: string;
 }) {
+    const countUpRef = useRef(null);
+    const {} = useCountUp({
+        ref: countUpRef,
+        start: 0,
+        end: count,
+        suffix: "+",
+        duration: 3,
+        delay:2
+    });
+
+    // useEffect(() => {
+    //     update(count);
+    // }, [count,update]);
     return (
         <div
             // className="bdr"
@@ -57,19 +70,7 @@ function Cloud({
                     alt=""
                     className="absolute top-0 left-0 right-0 bottom-0 min-h-0 min-w-0 aspect-[5/3.5] z-10"
                 />
-                <CountUp
-                    start={0}
-                    end={count}
-                    suffix="+"
-                    preserveValue
-                    duration={5}
-                >
-                    {({ countUpRef }) => (
-                        <span ref={countUpRef} className="z-20">
-                            0
-                        </span>
-                    )}
-                </CountUp>
+                <span ref={countUpRef} className="z-20"/>
                 <span className="z-20">{title}</span>
             </section>
         </div>

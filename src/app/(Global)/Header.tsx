@@ -39,7 +39,7 @@ export default function Header() {
         <div className="bg-primary text-white flex items-center py-1">
             <section className="max-w-7xl mx-auto px-3 grow h-20 flex items-center justify-between">
                 <img
-                    onClick={()=> router.push("/")}
+                    onClick={() => router.push("/")}
                     src={Logo.src}
                     alt="NextGen Marketing Agency"
                     className="h-4/5 cursor-pointer active:scale-95"
@@ -64,7 +64,7 @@ export default function Header() {
                         size="large"
                         onClick={() => setOpen((prev) => !prev)}
                     >
-                        <HiMenu size={36} color="white"/>
+                        <HiMenu size={36} color="white" />
                     </IconButton>
                     <Drawer open={open} onClose={() => setOpen(false)}>
                         <nav className="flex flex-col justify-start items-start gap-x-5 bg-[#1E1A65] h-full pt-20 w-60 pl-8 gap-y-5 text-white">
@@ -72,6 +72,7 @@ export default function Header() {
                                 <Link
                                     key={i}
                                     href={route.path}
+                                    onClick={() => setOpen(false)}
                                     className={`font-bold ${
                                         path === route.path
                                             ? "underline underline-offset-4 decoration-2"

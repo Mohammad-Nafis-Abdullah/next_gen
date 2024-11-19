@@ -10,7 +10,7 @@ import { TbArrowBadgeDownFilled, TbArrowBadgeUpFilled } from "react-icons/tb";
 export function OurServices() {
     return (
         <div>
-            <h3 className="basis-full text-center font-extrabold text-3xl mb-5">
+            <h3 className="text-center font-extrabold text-3xl mb-5">
                 Our <span className="text-primary">Services</span>
             </h3>
             <section className="flex flex-col sm:flex-row gap-5">

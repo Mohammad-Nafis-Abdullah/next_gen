@@ -1,5 +1,6 @@
 import { AboutNextGen } from "./(Home)/AboutNextGen";
 import { AboutVedio } from "./(Home)/AboutVedio";
+import ClientReviews from "./(Home)/ClientReviews";
 import { Completed_work } from "./(Home)/Completed_work";
 import Hero from "./(Home)/Hero";
 import { OurServices } from "./(Home)/OurServices";
@@ -17,6 +18,9 @@ export default function Home() {
             </div>
             <div className="px-2 py-8 mt-5">
                 <OurServices/>
+            </div>
+            <div className="px-2 py-8 mt-5">
+                <ClientReviews/>
             </div>
         </>
     );

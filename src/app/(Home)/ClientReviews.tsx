@@ -71,7 +71,7 @@ const ReviewCard = ({
     review_text: string;
 }) => {
     return (
-        <Card className="h-auto shadow-md bg-primary/5">
+        <Card className="h-auto shadow-md bg-primary/10">
             <CardContent>
                 <Typography
                     gutterBottom

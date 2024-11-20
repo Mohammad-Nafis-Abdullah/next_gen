@@ -1,3 +1,5 @@
+"use client";
+
 import { AboutNextGen } from "./(Home)/AboutNextGen";
 import { AboutVedio } from "./(Home)/AboutVedio";
 import ClientReviews from "./(Home)/ClientReviews";
@@ -17,10 +19,10 @@ export default function Home() {
                 <AboutNextGen />
             </div>
             <div className="px-2 py-8 mt-5">
-                <OurServices/>
+                <OurServices />
             </div>
             <div className="px-2 py-8 mt-5">
-                <ClientReviews/>
+                <ClientReviews />
             </div>
         </>
     );

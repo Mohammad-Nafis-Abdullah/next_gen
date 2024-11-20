@@ -4,11 +4,40 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card, CardContent, Rating, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
-import ratings_data from "@/data/ratings";
 import Slider from "react-slick";
+import { faker } from "@faker-js/faker";
+import { MouseEventHandler, useEffect, useState } from "react";
+import ReviewsModal from "./ReviewsModal";
+
+export interface user_rating {
+    id: string;
+    userName: string;
+    rating: number;
+    message: string;
+}
+
+function ratings_data(size: number): user_rating[] {
+    const data: user_rating[] = [];
+
+    for (let i = 0; i < size; i++) {
+        data.push({
+            id: faker.string.ulid(),
+            userName: faker.person.fullName(),
+            rating: faker.number.int({ min: 3, max: 5 }),
+            message: faker.lorem.paragraph({ min: 2, max: 5 }),
+        });
+    }
+    return data;
+}
 
 export default function ClientReviews() {
-    const data = ratings_data(10);
+    const [data, setData] = useState<user_rating[]>([]);
+    const [modalData, setModalData] = useState<user_rating | null>(null);
+
+    useEffect(() => {
+        setData(ratings_data(10));
+    }, []);
+
     const settings = {
         className: "sm:pl-2",
         infinite: true,
@@ -50,38 +79,39 @@ export default function ClientReviews() {
                 {[...data].map((review) => (
                     <div key={review.id} className="px-2">
                         <ReviewCard
-                            user_name={review.userName}
-                            star_count={review.rating}
-                            review_text={review.message}
+                            review={review}
+                            onClick={() => setModalData(review)}
                         />
                     </div>
                 ))}
             </Slider>
+            <ReviewsModal modalData={modalData} setModalData={setModalData} />
         </section>
     );
 }
 
 const ReviewCard = ({
-    user_name,
-    star_count,
-    review_text,
+    review,
+    onClick,
 }: {
-    user_name: string;
-    star_count: number;
-    review_text: string;
+    review: user_rating;
+    onClick: MouseEventHandler<HTMLDivElement> | undefined;
 }) => {
     return (
-        <Card className="h-auto shadow-md bg-primary/10">
+        <Card
+            onClick={onClick}
+            className="shadow-md bg-primary/5 cursor-pointer"
+        >
             <CardContent>
                 <Typography
                     gutterBottom
                     className="text-black font-bold uppercase text-sm sm:text-base"
                 >
-                    {user_name}
+                    {review.userName}
                 </Typography>
                 <Rating
                     name="text-feedback"
-                    value={star_count}
+                    value={review.rating}
                     readOnly
                     precision={0.5}
                     emptyIcon={
@@ -95,9 +125,9 @@ const ReviewCard = ({
                     sx={{ color: "text.secondary", mb: 1.5 }}
                     className="text-xs sm:text-sm font-bold text-gray-400 overflow-hidden"
                 >
-                    {review_text.length > 100
-                        ? `${review_text.slice(0, 100)}...`
-                        : review_text}
+                    {review.message.length > 100
+                        ? `${review.message.slice(0, 100)}...`
+                        : review.message}
                 </Typography>
             </CardContent>
         </Card>
